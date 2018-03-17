@@ -1,0 +1,57 @@
+@import 'src/style/base';
+
+@mixin withFade {
+  @include size(100%);
+  @include position(0, 0);
+  @include circular();
+  opacity: 0.2;
+  position: absolute;
+  pointer-events: none;
+  background-color: $balihai;
+  content: "";
+}
+
+.border__enhancer {
+  display: inline-block;
+  position: relative;
+  border-color: transparent;
+  border-style: solid;
+  @include size(100%);
+  &.withColor {
+    border-color: $gray;
+  }
+  &.withActiveColor {
+    border-color: $balihai;
+  }
+  &.circular {
+    @include circular();
+  }
+  &.withCursor {
+    cursor: pointer;
+  }
+  &.withHover {
+    &:hover {
+      &.withFade {
+        &:after {
+          @include withFade();
+        }
+      }
+      border-color: $gray;
+    }
+  }
+  &.withFocus {
+    &.withFade {
+      &:after {
+        @include withFade();
+      }
+    }
+    border-color: $gray;
+    outline: none;
+  }
+  &.md {
+    @include border-size(md);
+  }
+  &.sm {
+    @include border-size(sm);
+  }
+}

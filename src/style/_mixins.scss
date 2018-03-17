@@ -1,0 +1,31 @@
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-container($flow: row nowrap, $justify: flex-start, $align-items: stretch, $align-content: stretch) {
+  align-content: $align-content;
+  align-items: $align-items;
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify;
+}
+
+@mixin border-size($size) {
+  @if $size == sm {
+    border-width: $border-width-sm;
+  } @else {
+    border-width: $border-width-md;
+  }
+}
+
+@mixin position($top: 0, $left: 0, $bottom: 0, $right: 0) {
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin circular {
+  border-radius: 50%;
+}

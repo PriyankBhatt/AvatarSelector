@@ -1,0 +1,33 @@
+@import 'src/style/base';
+
+.loading__enhancer {
+  @include size(100%);
+  @include circular();
+  position: relative;
+}
+
+.spinner {
+  @include circular();
+  @include size(100%);
+  position: absolute;
+  border-style: solid;
+  box-sizing: content-box !important;
+  animation: rotation 1s infinite linear;
+  border-left-color: rgba($balihai, 1);
+  border-right-color: rgba($balihai,1);
+  border-bottom-color: rgba($balihai,1);
+  border-top-color: rgba($black, 1);
+  &.md {
+    @include border-size(md);
+    @include position(-1 * $border-width-md, -1 * $border-width-md);
+  }
+  &.sm {
+    @include border-size(sm);
+    @include position(-1 * $border-width-sm, -1 * $border-width-sm);
+  }
+}
+
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
+}

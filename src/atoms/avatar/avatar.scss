@@ -1,0 +1,17 @@
+@import 'src/style/base';
+
+
+.avatar__image__container {
+  @include size(100%);
+  &:focus {
+    outline: none;
+  }
+}
+
+.avatar__image {
+  object-fit: cover;
+  @include size(100%);
+  &.circular {
+    @include circular();
+  }
+}

@@ -1,0 +1,10 @@
+@import 'src/style/base';
+
+.avatar__container {
+  @include size($avatar-width, $avatar-height);
+  display: inline-block;
+}
+
+.avatar__selector__container  {
+  @include flex-container(row nowrap, center);
+}
